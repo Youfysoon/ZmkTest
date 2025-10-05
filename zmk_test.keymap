@@ -1,0 +1,36 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                // 第1行：CU1, ESC, `, 1, 2, 3, 4, 5, 6
+                &kp CUSTOM00    &kp ESC     &kp GRAVE   &kp 1    &kp 2    &kp 3    &kp 4    &kp 5    &kp 6
+
+                // 第2行：CU2, TAB, 7, 8, 9, 0, -, =, BACK
+                &kp CUSTOM01    &kp TAB     &kp 7       &kp 8    &kp 9    &kp 0    &kp MINUS &kp EQUAL &kp BACKSPACE
+
+                // 第3行：W, Q, E, R, T, Y, U, I, O
+                &kp W          &kp Q       &kp E       &kp R    &kp T    &kp Y    &kp U    &kp I    &kp O
+
+                // 第4行：CU3, CAPS, A, S, D, P, [, ], \
+                &kp CUSTOM02    &kp CAPS    &kp A       &kp S    &kp D    &kp P    &kp LBRACKET &kp RBRACKET &kp BACKSLASH
+
+                // 第5行：D, F, G, H, J, K, L, ;, '
+                &kp D          &kp F       &kp G       &kp H    &kp J    &kp K    &kp L    &kp SEMICOLON &kp APOSTROPHE
+
+                // 第6行：CU5, SHIFT, Z, X, C, V, B, ENTER, CU4
+                &kp CUSTOM04    &kp SHIFT   &kp Z       &kp X    &kp C    &kp V    &kp B    &kp ENTER &kp CUSTOM03
+
+                // 第7行：CU6, CTRL, N, M, , , . , / , SHIFT, UP
+                &kp CUSTOM05    &kp CTRL    &kp M       &kp COMMA &kp DOT &kp SLASH &kp SHIFT &kp UP
+
+                // 第8行：WIN, ALT, SPACE, ALT, FN, CTRL, LEFT, DOWN, RIGHT
+                &kp GUI        &kp ALT     &kp SPACE   &kp ALT  &fn      &kp CTRL &kp LEFT &kp DOWN &kp RIGHT
+            >;
+        };
+    };
+};
