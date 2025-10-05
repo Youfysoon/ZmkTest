@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup ZMK
+        uses: zmkfirmware/setup-zmk@v1
+
+      - name: Build
+        run: |
+          west build -b <board> -d build -- -DCONFIG_ZMK_KEYBOARD_NAME="<keyboard-name>"
+          cp build/zmk.uf2 ./
+        env:
+          ZMK_BOARD: <board>
+          ZMK_KEYBOARD_NAME: <keyboard-name>
